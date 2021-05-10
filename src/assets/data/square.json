@@ -1,0 +1,130 @@
+[
+    {   "id":1001,
+        "elementDess":"京东京造",
+        "name":"京东自有品牌",
+        "img":[
+            "https://img30.360buyimg.com/img/s200x200_jfs/t1/33396/8/2028/194393/5cac15f1E437429da/155d84628f435eb2.jpg!cc_100x100.webp",
+            "https://img30.360buyimg.com/img/s200x200_jfs/t1/79980/12/12928/48238/5da56d97E2a9e3189/2a9e45fbfa62c0db.jpg!cc_100x100.webp"
+        ]
+    },
+    {   "id":1001,
+        "elementDess":"电脑办公",
+        "name":"科技潮物 惠享不停",
+        "img":[
+            "https://img14.360buyimg.com/img/s200x200_jfs/t1/79668/25/6008/155537/5d412d9fEd5d5c8ee/6a1b2703a9ed8737.jpg!cc_100x100.webp",
+            "https://img12.360buyimg.com/img/s200x200_jfs/t1/129710/40/7705/118381/5f407de7Ee600c6d1/158efc3632b232fd.jpg!cc_100x100.webp"
+        ]
+    },
+    {   "id":1001,
+        "elementDess":"生鲜馆",
+        "name":"尝遍天下鲜",
+        "img":[
+            "//img12.360buyimg.com/img/s200x200_jfs/t28387/196/1412254870/125137/45afeaa1/5cde7655N7ac9ae10.jpg!cc_100x100.webp",
+            "//img13.360buyimg.com/img/s200x200_jfs/t1/104804/3/6277/128151/5df330e3E03fb7ecd/7faf2a7a0ef2b7e3.jpg!cc_100x100.webp"
+        ]
+    },
+    {   "id":1001,
+        "elementDess":"智能数码",
+        "name":"尽享玩物",
+        "img":[
+            "//img20.360buyimg.com/img/s200x200_jfs/t1/158016/18/8277/42041/6034b4e7E2d51fb53/ae66ca3ae00ce889.jpg!cc_100x100.webp",
+            "//img30.360buyimg.com/img/s200x200_jfs/t1/45325/22/15182/166212/5dc3d811E1795fe79/c6f576718dba1566.jpg!cc_100x100.webp"
+        ]
+    },
+    {   "id":1001,
+        "elementDess":"运动城",
+        "name":"生命在于运动",
+        "img":[
+            "//img14.360buyimg.com/img/s200x200_jfs/t1/6531/33/6918/109787/5be18a5fE8b34a579/fef65ad300a4fe85.jpg!cc_100x100.webp",
+            "//img10.360buyimg.com/img/s200x200_jfs/t1/155281/5/5106/65955/5fa77cadE0969a97d/d49b1decf3dd9930.jpg!cc_100x100.webp"
+        ]
+    },
+    {   "id":1001,
+        "elementDess":"企业购",
+        "name":"一站式企业采购平台",
+        "img":[
+            "//img30.360buyimg.com/img/s200x200_jfs/t1/152907/32/9804/49767/5fd4d57aE8734c745/8f8a9e98bc24bc72.jpg!cc_100x100.webp",
+            "//img14.360buyimg.com/img/s200x200_jfs/t1/33807/25/12331/153823/5ced2af6E985f362a/85227292ad2e5493.jpg!cc_100x100.webp"
+        ]
+    },
+    {   "id":1001,
+        "elementDess":"食品饮料",
+        "name":"吃货嘉年华",
+        "img":[
+            "//img14.360buyimg.com/img/s200x200_jfs/t1/129404/35/14857/103597/5f86dbe0Ea114e1c4/08639d1859e1f333.jpg!cc_100x100.webp",
+            "//img14.360buyimg.com/img/s200x200_jfs/t1/194441/21/17/118565/60864e71E9abfd68c/047fedb5dd4b2b26.jpg!cc_100x100.webp"
+        ]
+    },
+    {   "id":1001,
+        "elementDess":"新机首发",
+        "name":"有新机更有范",
+        "img":[
+            "//img14.360buyimg.com/img/s200x200_jfs/t1/171008/16/12976/123768/60505585E3d4015c8/b8f492e316a04daf.jpg!cc_100x100.webp",
+            "//img11.360buyimg.com/img/s200x200_jfs/t1/155021/33/20871/53410/603f400fE51b7224c/f7e5003b276e6095.jpg!cc_100x100.webp"
+        ]
+    },
+    {   "id":1001,
+        "elementDess":"汽车生活",
+        "name":"放心养车 爱车无忧",
+        "img":[
+            "//img20.360buyimg.com/img/s200x200_jfs/t1/68969/24/8724/256626/5d6882b1Eca1326cc/faf45e999b6a07e2.jpg!cc_100x100.webp",
+            "//img10.360buyimg.com/img/s200x200_jfs/t1/192605/36/1688/41250/6094ebf3E06fe0484/bc61057a87caac74.jpg!cc_100x100.webp"
+        ]
+    },
+    {   "id":1001,
+        "elementDess":"Joy寻宝",
+        "name":"懂你的Joy",
+        "img":[
+            "//img13.360buyimg.com/img/s200x200_jfs/t1/158283/15/6217/464645/601a7761E1d4fedb6/e3ff154f05d7982d.png!cc_100x100.webp",
+            "//img20.360buyimg.com/img/s200x200_jfs/t1/159325/21/15331/26002/605b3943E1c098ef3/edfa39bce41b1dd0.jpg!cc_100x100.webp"
+        ]
+    },
+    {   "id":1001,
+        "elementDess":"京东超市",
+        "name":"一站式囤生活好物",
+        "img":[
+            "//img14.360buyimg.com/img/s200x200_jfs/t19429/345/2114569686/193072/6f671ab/5ae74720N203d91fc.jpg!cc_100x100.webp",
+            "//img30.360buyimg.com/img/s200x200_jfs/t1/79980/12/12928/48238/5da56d97E2a9e3189/2a9e45fbfa62c0db.jpg!cc_100x100.webp"
+        ]
+    },
+    {   "id":1001,
+        "elementDess":"京东手机",
+        "name":"一个极客的诞生",
+        "img":[
+            "//img10.360buyimg.com/img/s200x200_jfs/t1/195251/28/503/70907/608a8bc4E87eaf1ae/9aa39ad669ed7f39.jpg!cc_100x100.webp",
+            "//img12.360buyimg.com/img/s200x200_jfs/t1/155640/9/20262/106520/606ea288Ec8e225c4/3771794001452afe.jpg!cc_100x100.webp"
+        ]
+    },
+    {   "id":1001,
+        "elementDess":"中外名酒",
+        "name":"享全球美酒品美好生活",
+        "img":[
+            "//img14.360buyimg.com/img/s200x200_jfs/t1/96933/25/1482/155790/5dbfd5b8E390fac06/39330d260c9b0cc6.jpg!cc_100x100.webp",
+            "//img20.360buyimg.com/img/s200x200_jfs/t17932/358/1058760356/375820/b4e28692/5ab9e271N2c861750.jpg!cc_100x100.webp"
+        ]
+    },
+    {   "id":1001,
+        "elementDess":"京东国际",
+        "name":"一站尽享进口好物",
+        "img":[
+            "//img13.360buyimg.com/img/s200x200_jfs/t1/133546/8/1553/143587/5eda1cacE96737c29/57b8bd2a50e3936a.jpg!cc_100x100.webp",
+            "//img11.360buyimg.com/img/s200x200_jfs/t1/19555/11/7564/119333/5c6e1d23Ee2e27a4c/a98ab1fa6ca9afbd.jpg!cc_100x100.webp"
+        ]
+    },
+    {   "id":1001,
+        "elementDess":"个护清洁馆",
+        "name":"欢洗四季 洁净生活",
+        "img":[
+            "//img13.360buyimg.com/img/s200x200_jfs/t1/179810/19/1425/283367/608a30a4Ecf853d47/a870eb2cef642f5f.jpg!cc_100x100.webp",
+            "//img12.360buyimg.com/img/s200x200_jfs/t1/91027/11/186/163437/5da91fafE778a29c0/983e5b74b103ff67.jpg!cc_100x100.webp"
+        ]
+    },
+    {   "id":1001,
+        "elementDess":"家用电器",
+        "name":"买家电 上京东",
+        "img":[
+            "//img20.360buyimg.com/img/s200x200_jfs/t1/165908/9/20021/115850/607d23b5E62d0f0c8/f686092e15f3e782.jpg!cc_100x100.webp",
+            "//img14.360buyimg.com/img/s200x200_jfs/t1/151530/31/11551/45893/5fe5b98aEc05d3152/488b4ceec788875b.jpg!cc_100x100.webp"
+        ]
+    }
+]
