@@ -45,6 +45,31 @@
 }
 $(function () {
   //加入购物车
+  // 账号登录状态
+  function getCookie(name) {
+    var cookie_array = document.cookie.split("; "); // console.log(cookie_array);
+
+    for (var i = 0; i < cookie_array.length; i++) {
+      var cookie_item_array = cookie_array[i].split("=");
+
+      if (name === cookie_item_array[0]) {
+        return cookie_item_array[1];
+      }
+    }
+
+    return "";
+  }
+
+  ;
+  getUname();
+
+  function getUname() {
+    if (getCookie("uname")) {
+      // console.log(getCookie("uname"));
+      document.querySelector(".nav_title").innerHTML = getCookie("uname");
+    }
+  }
+
   function getCookie(name) {
     var cookie_array = document.cookie.split("; "); // console.log(cookie_array);
 

@@ -4,8 +4,27 @@
  * @Author: Ankang
  * @Date: 2021-05-12 08:52:50
  * @LastEditors: Ankang
- * @LastEditTime: 2021-05-12 21:27:02
+ * @LastEditTime: 2021-05-15 19:47:09
  */
+// 账号登录状态
+function getCookie(name) {
+      var cookie_array = document.cookie.split("; ");
+      // console.log(cookie_array);
+      for (var i = 0; i < cookie_array.length; i++) {
+          var cookie_item_array = cookie_array[i].split("=");
+          if (name === cookie_item_array[0]) {
+              return cookie_item_array[1];
+          }
+      }
+      return "";
+  };
+  getUname()
+  function getUname(){
+      if (getCookie("uname")){
+          // console.log(getCookie("uname"));
+          document.querySelector(".nav_title").innerHTML=getCookie("uname");
+      }
+  }
 init()
 function init(){
     // console.log(cookie("shoplist"))
