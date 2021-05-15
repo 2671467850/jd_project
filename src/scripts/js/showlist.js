@@ -4,7 +4,7 @@
  * @Author: Ankang
  * @Date: 2021-05-08 21:20:30
  * @LastEditors: Ankang
- * @LastEditTime: 2021-05-15 19:34:39
+ * @LastEditTime: 2021-05-15 20:45:03
  */
 // let elems = document.querySelector('.shoplist')
 
@@ -303,10 +303,10 @@ function getCookie(name) {
     return "";
 };
 getUname()
-function getUname(){
-    if (getCookie("uname")){
+function getUname() {
+    if (getCookie("uname")) {
         // console.log(getCookie("uname"));
-        document.querySelector(".nav_title").innerHTML=getCookie("uname");
+        document.querySelector(".nav_title").innerHTML = getCookie("uname");
     }
 }
 ajax({
@@ -318,11 +318,11 @@ ajax({
         renderShopList(res)
     }
 });
-{/* <li class="icon" data="100101"><img src="${item.imgaddress}" /></li> */}
-function renderShopList(data){
+{/* <li class="icon" data="100101"><img src="${item.imgaddress}" /></li> */ }
+function renderShopList(data) {
     // console.log(data);
     let elems = document.querySelector('.shoplist')
-    data.forEach(function (item,index){
+    data.forEach(function (item, index) {
         elems.innerHTML += `<div class="goods" data="${index}">
                                 <div class="imgshow">
                                 <a href="javascript:void(0)">
@@ -332,10 +332,10 @@ function renderShopList(data){
                                 </div>
                                 <ul class="iconList clear" data="${index}">
                                 ${(() => {
-                                    return item.bigimg.reduce((value, item) => {
-                                        return value + '<li class="icon"><img src="' + item.bigimgAddress + '" /></li>'
-                                    }, "");
-                                })()}
+                return item.bigimg.reduce((value, item) => {
+                    return value + '<li class="icon"><img src="' + item.bigimgAddress + '" /></li>'
+                }, "");
+            })()}
                                 </ul>
                                 <div class="priceCon">
                                 <strong class="price"> <em>￥</em><i>${item.price}</i> </strong>
@@ -363,42 +363,44 @@ function renderShopList(data){
                                 </div>
                             </div>`
     })
-    var iconLists=document.querySelectorAll(".iconList");
-    iconLists.forEach(function(item,index){
+    var iconLists = document.querySelectorAll(".iconList");
+    iconLists.forEach(function (item, index) {
         changePrev(item.children[0].firstElementChild);
-        item.addEventListener("mouseover",mouseHandler);
-        item.addEventListener("mouseout",mouseHandler);
+        item.addEventListener("mouseover", mouseHandler);
+        item.addEventListener("mouseout", mouseHandler);
     })
     //跳转到详情列表
     var goods = document.querySelectorAll('.goods');
-    goods.forEach(function(item,index){
-        item.addEventListener('click',goodsClickHandler)
+    goods.forEach(function (item, index) {
+        // console.log(item.children[0])
+        item.addEventListener('click', goodsClickHandler)
     })
 }
-function goodsClickHandler(e){
+
+function goodsClickHandler(e) {
     // console.log(e);
-    if(e.target.nodeName === "IMG"){
+    if (e.target.nodeName === "IMG") {
         var index = e.target.getAttribute("data")
-        if(index){
+        if (index) {
             // console.log(index);
-            document.cookie=`shoplist=${index}`;
+            document.cookie = `shoplist=${index}`;
             location.href = 'detail.html'
         }
 
     }
 }
-function mouseHandler(e){
-    if(e.target.nodeName!=="IMG") return;
+function mouseHandler(e) {
+    if (e.target.nodeName !== "IMG") return;
     // console.log(e.target)
     changePrev(e.target);
     // var imgshows=document.querySelectorAll(".imgshow img");
     // imgshows.forEach(function(item,index){
-        // console.log(item.getAttribute("data"))
-        // console.log(e.target.parentElement.style.data)
-        // if(item.style.data == e.target.parentElement.style.data){
-        //     item.src=e.target.src;
-        // }
-        // item.src=e.target.src;
+    // console.log(item.getAttribute("data"))
+    // console.log(e.target.parentElement.style.data)
+    // if(item.style.data == e.target.parentElement.style.data){
+    //     item.src=e.target.src;
+    // }
+    // item.src=e.target.src;
     // })
     // imgshow.src=e.target.src;
     // var ids=e.target.parentElement.getAttribute("data");
@@ -407,10 +409,10 @@ function mouseHandler(e){
     // price.innerHTML=`<em>￥</em><i>${o.price}</i>`
 }
 var prev;
-function changePrev(elem){
-    if(prev){
-        prev.style.borderColor="transparent";
+function changePrev(elem) {
+    if (prev) {
+        prev.style.borderColor = "transparent";
     }
-    prev=elem;
-    prev.style.borderColor="#e4393c";
+    prev = elem;
+    prev.style.borderColor = "#e4393c";
 }

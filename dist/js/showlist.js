@@ -6,7 +6,7 @@
  * @Author: Ankang
  * @Date: 2021-05-08 21:20:30
  * @LastEditors: Ankang
- * @LastEditTime: 2021-05-15 19:34:39
+ * @LastEditTime: 2021-05-15 20:45:03
  */
 // let elems = document.querySelector('.shoplist')
 // elems.innerHTML = `
@@ -348,6 +348,7 @@ function renderShopList(data) {
 
   var goods = document.querySelectorAll('.goods');
   goods.forEach(function (item, index) {
+    // console.log(item.children[0])
     item.addEventListener('click', goodsClickHandler);
   });
 }

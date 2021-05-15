@@ -6,11 +6,71 @@
  * @Author: Ankang
  * @Date: 2021-05-10 14:29:21
  * @LastEditors: Ankang
- * @LastEditTime: 2021-05-10 15:19:41
+ * @LastEditTime: 2021-05-15 21:05:20
  */
+//防抖-工具
+function debound(fn) {
+  var wait = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 600;
+  var now = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : true;
+  // 标识 定时器
+  var timer = null;
+  return function (ev) {
+    var _this = this;
+
+    // 判断它是否开始执行还是最后执行
+    var start = now && !timer; // 清除定时器
+
+    clearTimeout(timer);
+    timer = setTimeout(function () {
+      timer = null; // 让this指向到原来的位置上
+
+      !now ? fn.call(_this, ev) : null;
+    }, wait); // 立即执行
+
+    start ? fn.call(this, ev) : null;
+  };
+} // 节流-工具-电梯导航
+
+
+function throttle(fn) {
+  var wait = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 500;
+  // 上一次执行时间
+  var prevTime = 0; // 定时器
+
+  var timer = null;
+  return function (ev) {
+    var _this2 = this;
+
+    // 当前时间
+    var nowTime = Date.now(); // 计算当前是否达到了设置的执行时长
+
+    var difftime = wait - (nowTime - prevTime);
+
+    if (difftime <= 0) {
+      // 到达设置的时长
+      // 让上一次执行的时间设置为当前执行的时间
+      prevTime = nowTime; // 清除定时器
+
+      clearTimeout(timer);
+      timer = null; // 执行回调函数，注意this指向
+
+      fn.call(this, ev);
+    } else if (!timer) {
+      timer = setTimeout(function () {
+        // 清除定时器
+        clearTimeout(timer);
+        timer = null; // 执行回调函数，注意this指向
+
+        fn.call(_this2, ev);
+      }, wait);
+    }
+  };
+}
+
 var notClickFlag = true;
 
 function getScrollFn() {
+  console.log("aa");
   var scrollTop = $(document).scrollTop();
 
   if (notClickFlag) {
@@ -31,13 +91,13 @@ function getScrollFn() {
 }
 
 $(function () {
-  getScrollFn();
-  console.log("aaa");
-}); // 监听页面滚动事件
+  getScrollFn(); // console.log("aaa")
+}); // 监听页面滚动事件+节流
 
-$(window).scroll(function () {
-  getScrollFn();
-});
+window.onscroll = throttle(getScrollFn); // $(window).scroll(function () {
+//   getScrollFn()
+// })
+
 $('.nav_list > li').click(function () {
   // 点击时，让标识设置为false
   notClickFlag = false; // 判断它是第后一个回到顶部
