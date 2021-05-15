@@ -6,7 +6,7 @@
  * @Author: Ankang
  * @Date: 2021-05-07 11:10:44
  * @LastEditors: Ankang
- * @LastEditTime: 2021-05-07 12:05:30
+ * @LastEditTime: 2021-05-14 22:31:17
  */
 var search_ele = document.getElementById("search_text");
 var list_ele = document.getElementById("search_list"); // search_ele.oninput = function () {
@@ -33,7 +33,34 @@ var list_ele = document.getElementById("search_list"); // search_ele.oninput = f
 //         list_ele.innerHTML = "";
 //     }
 // }
-//京东
+//
+// 账号登录状态
+
+function getCookie(name) {
+  var cookie_array = document.cookie.split("; "); // console.log(cookie_array);
+
+  for (var i = 0; i < cookie_array.length; i++) {
+    var cookie_item_array = cookie_array[i].split("=");
+
+    if (name === cookie_item_array[0]) {
+      return cookie_item_array[1];
+    }
+  }
+
+  return "";
+}
+
+;
+getUname();
+
+function getUname() {
+  if (getCookie("uname")) {
+    // console.log(getCookie("uname"));
+    document.querySelector(".nav_title").innerHTML = getCookie("uname");
+    document.querySelector(".name").innerHTML = getCookie("uname");
+  }
+} //京东
+
 
 search_ele.oninput = function () {
   ajax({

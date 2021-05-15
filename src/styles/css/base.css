@@ -212,7 +212,7 @@ footer a {
 	left: 38px;
 	width: 36px;
 	height: 43px;
-	background: url(../images/ico.png) no-repeat;
+	background: url(../../assets/images/ico.png) no-repeat;
 }
 .service li:nth-child(2) h5 {
 	background-position: 0 -43px;
@@ -249,7 +249,7 @@ footer a {
 .coverage {
 	width: 200px;
 	height: 150px;
-	background: url(../images/ico_footer.png) no-repeat;
+	background: url(../../assets/images/ico_footer.png) no-repeat;
 }
 .coverage h5 {
 	padding-left: 35px;
@@ -285,7 +285,7 @@ footer a {
 	display: inline-block;
 	width: 103px;
 	height: 33px;
-	background: url(../images/ico_footer.png) no-repeat 0 -150px;
+	background: url(../../assets/images/ico_footer.png) no-repeat 0 -150px;
 	margin: 20px 4px 0;
 }
 .foot-icon a:nth-child(2) {

@@ -6,7 +6,7 @@
  * @Author: Ankang
  * @Date: 2021-05-08 21:20:30
  * @LastEditors: Ankang
- * @LastEditTime: 2021-05-10 09:34:27
+ * @LastEditTime: 2021-05-12 08:51:14
  */
 // let elems = document.querySelector('.shoplist')
 // elems.innerHTML = `
@@ -308,18 +308,36 @@ function renderShopList(data) {
   // console.log(data);
   var elems = document.querySelector('.shoplist');
   data.forEach(function (item, index) {
-    elems.innerHTML += "<div class=\"goods\">\n                                <div class=\"imgshow\">\n                                <a href=\"https://https://item.jd.com/100015769748.html\">\n                                <img src=\"".concat(item.imgaddress, "\" data=\"").concat(index, "\"/>\n                                </a>\n                                <div class=\"news\" style='display:block'></div>\n                                </div>\n                                <ul class=\"iconList clear\" data=\"").concat(index, "\">\n                                ").concat(function () {
+    elems.innerHTML += "<div class=\"goods\" data=\"".concat(index, "\">\n                                <div class=\"imgshow\">\n                                <a href=\"javascript:void(0)\">\n                                <img src=\"").concat(item.imgaddress, "\" data=\"").concat(index, "\"/>\n                                </a>\n                                <div class=\"news\" style='display:block'></div>\n                                </div>\n                                <ul class=\"iconList clear\" data=\"").concat(index, "\">\n                                ").concat(function () {
       return item.bigimg.reduce(function (value, item) {
-        return value + '<li class="icon" data="100101"><img src="' + item.bigimgAddress + '" /></li>';
+        return value + '<li class="icon"><img src="' + item.bigimgAddress + '" /></li>';
       }, "");
-    }(), "\n                                </ul>\n                                <div class=\"priceCon\">\n                                <strong class=\"price\"> <em>\uFFE5</em><i>").concat(item.price, "</i> </strong>\n                                </div>\n                                <div class=\"infoCon\">\n                                <a\n                                    href=\"javascript:void(0)\"\n                                    title=\"").concat(item.title1, "\"\n                                >\n                                    <em>\n                                    <span class=\"tag0\" style=\"display:block\">").concat(item.elementDess, "</span>\n                                    ").concat(item.name, "\n                                    </em>\n                                </a>\n                                </div>\n                                <div class=\"commit\">\n                                <a class=\"spu-href\" href=\"https://https://item.jd.com/100015769748.html\">\u53BB\u770B\u4E8C\u624B</a>\n                                <strong><a href=\"https://https://item.jd.com/100015769748.html\">200\u4E07</a>\u6761\u8BC4\u4EF7</strong>\n                                </div>\n                                <div class=\"shop\">\n                                <span class=\"J_im_icon\">\n                                    <a href=\"https://https://mall.jd.com/index-1000164941.html?from=pc\" title=\"realme\u771F\u6211\u4EAC\u4E1C\u81EA\u8425\u65D7\u8230\u5E97\">realme\u771F\u6211\u4EAC\u4E1C\u81EA\u8425\u65D7\u8230\u5E97</a>\n                                    <b title=\"\u8054\u7CFB\u5BA2\u670D\"></b>\n                                </span>\n                                </div>\n                            </div>");
+    }(), "\n                                </ul>\n                                <div class=\"priceCon\">\n                                <strong class=\"price\"> <em>\uFFE5</em><i>").concat(item.price, "</i> </strong>\n                                </div>\n                                <div class=\"infoCon\">\n                                <a\n                                    href=\"javascript:void(0)\"\n                                    title=\"").concat(item.title1, "\"\n                                >\n                                    <em>\n                                    <span class=\"tag0\" style=\"display:block\">").concat(item.elementDess, "</span>\n                                    ").concat(item.name, "\n                                    </em>\n                                </a>\n                                </div>\n                                <div class=\"commit\">\n                                <a class=\"spu-href\" href=\"javascript:void(0)\">\u53BB\u770B\u4E8C\u624B</a>\n                                <strong><a href=\"javascript:void(0)\">200\u4E07</a>\u6761\u8BC4\u4EF7</strong>\n                                </div>\n                                <div class=\"shop\">\n                                <span class=\"J_im_icon\">\n                                    <a href=\"javascript:void(0)\" title=\"realme\u771F\u6211\u4EAC\u4E1C\u81EA\u8425\u65D7\u8230\u5E97\">realme\u771F\u6211\u4EAC\u4E1C\u81EA\u8425\u65D7\u8230\u5E97</a>\n                                    <b title=\"\u8054\u7CFB\u5BA2\u670D\"></b>\n                                </span>\n                                </div>\n                            </div>");
   });
   var iconLists = document.querySelectorAll(".iconList");
   iconLists.forEach(function (item, index) {
     changePrev(item.children[0].firstElementChild);
     item.addEventListener("mouseover", mouseHandler);
     item.addEventListener("mouseout", mouseHandler);
+  }); //跳转到详情列表
+
+  var goods = document.querySelectorAll('.goods');
+  goods.forEach(function (item, index) {
+    item.addEventListener('click', goodsClickHandler);
   });
+}
+
+function goodsClickHandler(e) {
+  // console.log(e);
+  if (e.target.nodeName === "IMG") {
+    var index = e.target.getAttribute("data");
+
+    if (index) {
+      // console.log(index);
+      document.cookie = "shoplist=".concat(index);
+      location.href = 'detail.html';
+    }
+  }
 }
 
 function mouseHandler(e) {

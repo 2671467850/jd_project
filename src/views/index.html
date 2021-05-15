@@ -4,7 +4,7 @@
  * @Author: Ankang
  * @Date: 2021-05-06 15:23:12
  * @LastEditors: Ankang
- * @LastEditTime: 2021-05-10 14:58:30
+ * @LastEditTime: 2021-05-14 22:42:09
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -46,7 +46,7 @@
     </div>
     <div class="header">
         <div class="w">
-            <div id="logo" class="logo"><a href=""></a></div>
+            <div id="logo" class="logo"><a href="index.html"></a></div>
             <div class="search">
                 <div class="search_form">
                     <input type="text" id="search_text" class="text" placeholder="空气净化器家用">
@@ -56,7 +56,7 @@
                 <div class="shopcar">
                     <div class="icon_title">
                         <i class="iconfont icon-gouwuche"></i>
-                        <a href="">我的购物车</a>
+                        <a href="./cart.html">我的购物车</a>
                         <i class="ci-count" id="shopping-amount">0</i>
                     </div>
                 </div>
@@ -305,6 +305,9 @@
                     </div>
                     <div class="login-b">
                     </div>
+                </div>
+                <div style="width: 190px; height: 370px;">
+                    <img src="./assets/images/index_right_news.png" alt="" style="height: 370px; width: 190px;">
                 </div>
             </div>
         </div>
@@ -681,6 +684,12 @@
         <!-- <li><a href="javascript:void(0)">其他问题</a></li> -->
         <li><a href="javascript:void(0)">回到顶部</a></li>
     </ul>
+    <script>
+        const userAgent = navigator.userAgent;
+        if (/Mobile/i.test(userAgent) && !/iPad/i.test(userAgent)) {
+            location.href = '/api/moblie/index.html'
+        }
+    </script>
     <script src="./js/index.js"></script>
     <script src="./js/utils.js"></script>
     <script src="./js/search.js"></script>

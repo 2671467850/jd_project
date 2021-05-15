@@ -4,7 +4,7 @@
  * @Author: Ankang
  * @Date: 2021-05-08 21:20:30
  * @LastEditors: Ankang
- * @LastEditTime: 2021-05-10 09:34:27
+ * @LastEditTime: 2021-05-12 08:51:14
  */
 // let elems = document.querySelector('.shoplist')
 
@@ -304,9 +304,9 @@ function renderShopList(data){
     // console.log(data);
     let elems = document.querySelector('.shoplist')
     data.forEach(function (item,index){
-        elems.innerHTML += `<div class="goods">
+        elems.innerHTML += `<div class="goods" data="${index}">
                                 <div class="imgshow">
-                                <a href="https://https://item.jd.com/100015769748.html">
+                                <a href="javascript:void(0)">
                                 <img src="${item.imgaddress}" data="${index}"/>
                                 </a>
                                 <div class="news" style='display:block'></div>
@@ -314,7 +314,7 @@ function renderShopList(data){
                                 <ul class="iconList clear" data="${index}">
                                 ${(() => {
                                     return item.bigimg.reduce((value, item) => {
-                                        return value + '<li class="icon" data="100101"><img src="' + item.bigimgAddress + '" /></li>'
+                                        return value + '<li class="icon"><img src="' + item.bigimgAddress + '" /></li>'
                                     }, "");
                                 })()}
                                 </ul>
@@ -333,12 +333,12 @@ function renderShopList(data){
                                 </a>
                                 </div>
                                 <div class="commit">
-                                <a class="spu-href" href="https://https://item.jd.com/100015769748.html">去看二手</a>
-                                <strong><a href="https://https://item.jd.com/100015769748.html">200万</a>条评价</strong>
+                                <a class="spu-href" href="javascript:void(0)">去看二手</a>
+                                <strong><a href="javascript:void(0)">200万</a>条评价</strong>
                                 </div>
                                 <div class="shop">
                                 <span class="J_im_icon">
-                                    <a href="https://https://mall.jd.com/index-1000164941.html?from=pc" title="realme真我京东自营旗舰店">realme真我京东自营旗舰店</a>
+                                    <a href="javascript:void(0)" title="realme真我京东自营旗舰店">realme真我京东自营旗舰店</a>
                                     <b title="联系客服"></b>
                                 </span>
                                 </div>
@@ -350,6 +350,23 @@ function renderShopList(data){
         item.addEventListener("mouseover",mouseHandler);
         item.addEventListener("mouseout",mouseHandler);
     })
+    //跳转到详情列表
+    var goods = document.querySelectorAll('.goods');
+    goods.forEach(function(item,index){
+        item.addEventListener('click',goodsClickHandler)
+    })
+}
+function goodsClickHandler(e){
+    // console.log(e);
+    if(e.target.nodeName === "IMG"){
+        var index = e.target.getAttribute("data")
+        if(index){
+            // console.log(index);
+            document.cookie=`shoplist=${index}`;
+            location.href = 'detail.html'
+        }
+
+    }
 }
 function mouseHandler(e){
     if(e.target.nodeName!=="IMG") return;

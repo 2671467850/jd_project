@@ -4,7 +4,7 @@
  * @Author: Ankang
  * @Date: 2021-05-10 10:01:10
  * @LastEditors: Ankang
- * @LastEditTime: 2021-05-10 14:06:52
+ * @LastEditTime: 2021-05-14 22:00:28
  */
 $(function() {
     var flag = 0;
@@ -42,9 +42,21 @@ $(function() {
                 $(this).siblings("span").children("i").attr("class","error_icon");
                 $(this).siblings("span").children("em").text("手机号码格式不正确，请重新输入!");
             } else {
-                $(this).siblings("span").attr("class","success");
-                $(this).siblings("span").children("i").attr("class","success_icon");
-                $(this).siblings("span").children("em").text("手机号码格式正确!");
+                
+                //验证用户名是否重名
+                fetch(`/api/jd_db/yanzheng.php?username=${$("#tel").val()}`)
+                    .then(res => res.json())
+                    .then(data=>{
+                        if(data.code === 0){
+                            $(this).siblings("span").attr("class","error");
+                            $(this).siblings("span").children("i").attr("class","error_icon");
+                            $(this).siblings("span").children("em").text(data.msg);
+                        }else{
+                            $(this).siblings("span").attr("class","success");
+                            $(this).siblings("span").children("i").attr("class","success_icon");
+                            $(this).siblings("span").children("em").text(data.msg);
+                        }
+                    })
             }
         }
     });
@@ -85,7 +97,7 @@ $(function() {
         }
     });
 
-    $("form").submit(function() {
+    $(".over").click(function() {
         if ($("#tel").val() == '') {
             alert("手机号码不能为空!");
         } else if ($("#code").val() == '') {
@@ -98,7 +110,18 @@ $(function() {
             alert("请先同意《京东用户注册协议和隐私政策》协议。");
         } else {
             // alert("注册成功!");
-            $("form").attr("action","login.html");
+            // $("form").attr("action","login.html");
+
+
+            console.log($("#psw").val())
+            fetch(`/api/jd_db/logup.php?username=${$("#tel").val()}&password=${$("#psw").val()}`)
+                .then(res => res.json())
+                .then(data => {
+                    alert(data.msg);
+                    if(data.code === 0){
+                        window.location.href = "./login.html";
+                    }
+                })
         }
     });
 });

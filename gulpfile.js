@@ -4,7 +4,7 @@
  * @Author: Ankang
  * @Date: 2021-05-06 11:25:02
  * @LastEditors: Ankang
- * @LastEditTime: 2021-05-09 17:12:31
+ * @LastEditTime: 2021-05-14 20:14:08
  */
 const { series, src, dest, watch } = require('gulp');
 // gulp编译sass
@@ -122,17 +122,17 @@ function serverTask() {
         // 实时更新 热更新
         livereload: true,
         // 反向代理 服务器与服务器之间没有跨域问题
-        // middleware: function () {
-        //     return [
-        //         proxy('/api', {
-        //             target: 'http://www.jq.com',
-        //             changeOrigin: true,
-        //             pathRewrite: {
-        //                 '^/api': ''
-        //             }
-        //         })
-        //     ]
-        // }
+        middleware: function () {
+            return [
+                proxy('/api', {
+                    target: 'http://10.9.47.253:8080/',
+                    changeOrigin: true,
+                    pathRewrite: {
+                        '^/api': ''
+                    }
+                })
+            ]
+        }
     })
     // 打开浏览器，并访问到此网址
     open('http://localhost:4567')
