@@ -4,35 +4,10 @@
  * @Author: Ankang
  * @Date: 2021-05-07 11:10:44
  * @LastEditors: Ankang
- * @LastEditTime: 2021-05-14 22:31:17
+ * @LastEditTime: 2021-05-28 16:12:48
  */
 var search_ele = document.getElementById("search_text");
 var list_ele = document.getElementById("search_list");
-// search_ele.oninput = function () {
-//     ajax({
-//         url: "https://www.baidu.com/sugrec",
-//         data: {
-//             prod: "pc",
-//             wd: this.value
-//         },
-//         jsonp: "cb",
-//         dataType: "jsonp",
-//         callback: function (res) {
-//             // console.log(res);
-//             renderSearchResult(res.g);
-//         }
-//     })
-// }
-// function renderSearchResult(list) {
-//     if (list instanceof Array) {
-//         list_ele.innerHTML = list.map(function (item) {
-//             return `<li><a href="">${item.q}</a></li>`;
-//         }).join("");
-//     } else {
-//         list_ele.innerHTML = "";
-//     }
-// }
-//
 
 
 // 账号登录状态

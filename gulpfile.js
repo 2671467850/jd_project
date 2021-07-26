@@ -4,7 +4,7 @@
  * @Author: Ankang
  * @Date: 2021-05-06 11:25:02
  * @LastEditors: Ankang
- * @LastEditTime: 2021-05-14 20:14:08
+ * @LastEditTime: 2021-05-28 08:24:02
  */
 const { series, src, dest, watch } = require('gulp');
 // gulp编译sass
@@ -125,7 +125,7 @@ function serverTask() {
         middleware: function () {
             return [
                 proxy('/api', {
-                    target: 'http://10.9.47.253:8080/',
+                    target: 'http://10.9.47.234:8080/',
                     changeOrigin: true,
                     pathRewrite: {
                         '^/api': ''

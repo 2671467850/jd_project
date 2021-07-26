@@ -4,7 +4,7 @@
  * @Author: Ankang
  * @Date: 2021-05-10 09:40:48
  * @LastEditors: Ankang
- * @LastEditTime: 2021-05-14 22:19:33
+ * @LastEditTime: 2021-05-28 14:47:53
  */
 $(function () {
 
@@ -77,13 +77,6 @@ $(function () {
 			} else {
 				alert("错误次数过多，明天再试");
 			}
-
-
-
-
-
-
-
 			// alert("登录成功!");
 			//  // $("form").attr("action","index.html");
 			// var name=document.getElementById('uname').value;
